@@ -1,0 +1,230 @@
+/* 1. BUNGKUS BESAR dan H1 */
+    body{
+        background-color: rgb(209, 209, 209);
+    }
+
+    H1{
+        margin: 30px auto 30px;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 60px;
+        font-weight: bold;
+
+    }
+
+
+/* 2. CONTAINER */
+    .container {
+        width: 600px;
+        background-color: white;
+        margin: auto;
+        padding : 30px;
+        box-shadow : 0px 0px 1px 2px rgba(0,0,0,.3);
+        border-radius: 5px;
+    }
+
+
+/* 3. LIST */
+    .galeri li {
+        width: 120px;
+        height: 120px;
+        border: 5px solid #666;
+        float: left;
+        margin-right: 20px;
+        text-decoration: none;        
+    }
+
+    /* 3.1 EFEK BORDER RADIUS PADA SEMUA ELEMEN LIST  */
+        .galeri li,
+        .galeri li a img,
+        .galeri li a span{
+            /* border radius paling tinggi 50% */
+            border-radius: 50%;
+        }
+
+    /* 3.2 KOMPONEN-KOMPONEN LIST */
+        .galeri li a img{
+            width: 120px;
+            height: 120px;
+            /* absolute untuk menaikkan img ke atas agar SPAN masuk dibelakang IMG, bukan di bawah IMG */
+            position: absolute;
+        }
+
+        .galeri li a span{
+            display: block;
+            width: 120px;
+            height: 120px;
+            background-color: rgba(165, 112, 250, 0.3);
+            /* memberikan posisi absolute agar text-decoration pada e href tertutup oleh span meskipun span memiliki opacity 0 */
+            position: absolute;
+            text-align: center;
+            color: #333;
+            line-height: 120px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            font-size: smaller;
+            opacity: 0;
+            transition: .4s;
+        }
+    /* 3.3 EFEK HOVER PADA LIST */
+        .galeri li:hover a span{
+            opacity : .8;
+            transform: scale(1) rotate(360deg);
+        }
+
+
+/* 4 OVERLAY */
+    /* 4.1 MUNCUL LAPISAN LAIGHT BOX - OVERLAY */
+        .overlay{
+            width: 0;
+            height: 0;
+            position: fixed;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,0);
+            z-index: 9999;
+            text-align: center;
+            padding: 100px 0px;
+            /* taruh transisi di kondisi awal */
+            transition: 2s;
+        }
+
+        .overlay:target{
+            width: auto;
+            height: auto;
+            bottom: 0;
+            right: 0;
+            background: rgba(0,0,0,0.8);
+            /* transition: .8s; */
+        }
+
+        .overlay img{
+            /* max-height: 100%; */
+            max-width: 100%;
+            max-height: 100%;
+            box-shadow: 2px 2px 7px rgba(0,0,0,.5);
+            float: left;
+            opacity: 0;
+        }
+
+        .overlay:target img{
+            animation: munculFoto 2s forwards;
+        }
+        
+    /* 4.2 TUTUP LAPISAN LIGHT BOX - OVERLAY */
+        .overlay .close{
+            /* cara sandhika */
+                position: absolute;
+                top: 50px;
+                left: 50%;
+                margin-left: -30px;
+                color: white;
+                text-decoration: none;
+                background-color: black;
+                border: 1px solid white;
+                line-height: 14px;
+                padding: 5px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-weight: bolder;
+                /* agar supaya animasi close bekerja */
+                opacity: 0;
+            
+            /* cara gama */
+                /* display: block;
+                width: 60px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                margin: 20px auto 5px;
+                background-color: violet;
+                border-radius: 5px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: smaller; */
+        }
+
+        .overlay:target .close{
+            animation: slideClose .5s .5s forwards;
+        }
+
+
+/* 5 NAVIGASI */
+        .previous{
+            font-family: Tahoma, sans-serif;
+            font-size: 36px;
+            float: left;
+            color: rgb(209, 209, 209,.2);
+            margin-left: 410px;
+        }
+
+        .next{
+            font-family: Tahoma, sans-serif;
+            font-size: 36px;
+            float: left;
+            color: rgb(209, 209, 209,.2);
+        }
+
+        .previous a,
+        .next a{
+            display: inline-block;
+            text-decoration: none;
+            color: rgb(209, 209, 209,.2);
+            margin: 175px 10px;
+        }
+
+
+/* KEY FRAMES ANIMASI */
+    @keyframes munculFoto {
+        0%{
+            opacitiy : 0;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideClose {
+        0%{
+            opacity: 0;
+            margin-top: -20px;
+
+        }
+
+        100%{
+            opacity : 1;
+            margin-top: 0px;
+        }
+    }
+
+
+
+
+
+/* CLEAR FLOAT */
+    /**
+    * For modern browsers
+    * 1. The space content is one way to avoid an Opera bug when the
+    *    contenteditable attribute is included anywhere else in the document.
+    *    Otherwise it causes space to appear at the top and bottom of elements
+    *    that are clearfixed.
+    * 2. The use of `table` rather than `block` is only necessary if using
+    *    `:before` to contain the top-margins of child elements.
+    */
+    .cf:before,
+    .cf:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+    
+    .cf:after {
+        clear: both;
+    }
+    
+    /**
+    * For IE 6/7 only
+    * Include this rule to trigger hasLayout and contain floats.
+    */
+    .cf {
+        *zoom: 1;
+    }

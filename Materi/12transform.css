@@ -1,0 +1,38 @@
+/* memberikan perubahan elemen pada HTML */
+/* 
+scale - memperbesar atau memperkecil
+rotate - memutar
+skew - membuat condong/miring
+translate - mengubah posisi
+*/
+
+/* 
+scale(angka), scaleX(angka), scaleY(angka),
+rotate(deg), rotateX(deg), rotateY(deg),
+skew(deg), skewX(deg),skewY(deg)
+translate(px), translateX(px), translateY(px)
+
+*/
+
+
+.kotak{
+    height: 200px;
+    width: 200px;
+    background-color: cornflowerblue;
+    margin: 20px auto;
+    transition: 500ms;
+}
+
+.kotak:hover{
+    /* transform: scale(2, 1.5); */
+    /* transform: scaleX(2) scaleY(1.5); */
+    /* transform: rotate(-45deg) rotateX(-180deg) rotateY(-180deg); */
+    /* transform: translate(-50px); */
+    transform: skew(-45deg);
+}
+
+
+p{
+    font-size: 20px;
+    text-align: center;
+}

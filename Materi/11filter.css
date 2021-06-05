@@ -1,0 +1,38 @@
+/* propertyCSS untuk memberikan efek visual */
+/* tipe filter :
+blur(px)
+brightness(angka | %)
+contrast(angka | %)
+saturate(angka | %)
+grayscale(angka | %)
+sepia(angka | %)
+hue-rotate(deg)
+invert(angka | %)
+opacity(angka | %)
+drop-shadow(sama seperti box shadow)
+*/
+
+/* Hanya bisa ada satu filter di setiap tag. jika membuat 2 filter, maka filter terakhir lah yang akan dikerjakan oleh CSS3 */
+
+/* check filter ke website :
+http://html5-demos.appspot.com/static/css/filters/index.html
+*/
+
+
+img{
+    filter : blur(2px) grayscale(10%) drop-shadow(5px 5px 5px rgb(0,0,0,.7));
+    /* Filter dapat mempercepat performa web kita karena yang digunakan adalah RAM user, alias tidak mengambil memory dari browser */
+    /* filter: opacity(.2); */
+    /* opacity : .5 */
+}
+
+.tulis{
+    color: white;
+    font-family: cursive;
+    font-size: 48px;
+    text-align: center;
+    filter: drop-shadow(5px 5px 5px rgb(0,0,0,.7));
+    /* text-shadow: 5px 5px 5px rgb(0,0,0,.7); */
+    /* kalau pakai box-shadow yang kena bayangan kotak div nya, bukan tulisannya */
+    /* box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, .5); */
+}

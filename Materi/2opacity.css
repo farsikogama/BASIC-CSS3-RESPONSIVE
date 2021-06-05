@@ -1,0 +1,50 @@
+body {
+    background-image: url(farsikogama.jpg);
+}
+
+/* pembukaan */
+    .opacity {
+        width: 200px;
+        height: 200px;
+        background-color: chartreuse;
+        opacity: .50;
+        position: relative;
+    }
+
+    .opacity2 {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        opacity: 100%;
+        position: absolute;
+        right: -10px;
+        bottom:-10px;
+        /* opacity2 selalu terdampak efek transparan dari parent node nya */
+    }
+
+
+/* membuat parent node transparant tapi children note tidak */
+/* menggunakan RGBA (Red, Green, Blue, Alpha) dan HSLA (Hue, Saturation, Luminance, Alpha) */
+    .opacity3 {
+            width: 200px;
+            height: 200px;
+            
+            /* pakai RGBA */
+            /* background-color: rgba(100, 150, 200, 75%); */
+            
+            /* Pakai HSLA */
+            background-color: HSLA(100, 100%, 50%, 75%);
+            
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .opacity4 {
+            width: 50px;
+            height: 50px;
+            background-color: seagreen;
+            position: absolute;
+            right: -10px;
+            bottom:-10px;
+            /* opacity2 selalu terdampak efek transparan dari parent node nya */
+        }

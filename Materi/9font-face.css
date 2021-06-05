@@ -1,0 +1,26 @@
+/* digunakan agar font kita bisa dipanggil melalui web a.k.a. tidak client tidak perlu punya font di pc atau device mereka */
+
+
+/* CARA 1 menggunakan google font */
+
+
+/* CARA2 download font di fontsquirrel.com kemudian taruh di folder local web*/
+/* sintaks
+@font-face {
+    font-family : 'namafontbaru';
+    src url ('lokasi/file/fontbaru.eot');
+    src url ('lokasi/file/fontbaru.eot?#iefix') format ('embedded-opentype'),
+            ('lokasi/file/fontbaru.woff') format ('woff'),
+            ('lokasi/file/fontbaru.woff2') format ('woff2'),
+            ('lokasi/file/fontbaru.ttf') format ('truetype'),
+            ('lokasi/file/fontbaru.svh#svgFontName') format ('svg'),
+}
+
+note :
+-ga harus semua, pilih salah satu format aja terutama yang woff atau jika ga ada woff2
+- selalu cek licensenya di fontsquirrel.com jika ada logo kecil tanda bola dunia, berarti bebas digunakan di website
+- ada bberapa penggunaan di fontsquirrel.com (doc, web, android, tablet, dll) cek logo kecil dibawah font
+*/
+
+
+/* WEB Font generator, untuk mengubah ttf menjadi woff (tapi ingat selalu cek lisesnsinya pakaah boleh digunakan untuk website */

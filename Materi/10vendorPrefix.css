@@ -1,0 +1,21 @@
+/* digunakan untuk mengantisipasi property CSS 3 yang tidak disupport oleh browser tertentu */
+/* visit http://pleeease.io/play/ untuk cek apakah property CSS3 disupport oleh browser. Website itu akan memberikan vendor prefixnya sekalian*/
+
+
+/* 
+-webkit-propertycss3    (chrome, safari, opera versi terbaru)
+-moz-propertycss3   (firefox)
+-ms-propertycss3    (internet explorer)
+-o-propertycss3     (opera versi lama)
+*/
+
+/* contoh case */
+    body{
+        text-align: center;
+        align-items: center;
+    }
+
+    img{
+        /* -webkit-filter: grayscale(100%); */
+        filter: grayscale(100%);
+    }
